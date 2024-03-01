@@ -85,20 +85,44 @@
             <th>Login ID</th>
         </tr>
         <% users.forEach(function(user) { %>
-        <tr>
-            <td><%= user.firstName %></td>
-            <td><%= user.lastName %></td>
-            <td><%= user.mobileNumber %></td>
-            <td><%= user.email %></td>
-            <td><%= user.address.street %></td>
-            <td><%= user.address.city %></td>
-            <td><%= user.address.state %></td>
-            <td><%= user.address.country %></td>
-            <td><%= user.loginId %></td>
-        </tr>
-        <% }); %>
+            <tr>
+                <td>
+                    <%= user.firstName %>
+                </td>
+                <td>
+                    <%= user.lastName %>
+                </td>
+                <td>
+                    <%= user.mobileNumber %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <%= user.address.street %>
+                </td>
+                <td>
+                    <%= user.address.city %>
+                </td>
+                <td>
+                    <%= user.address.state %>
+                </td>
+                <td>
+                    <%= user.address.country %>
+                </td>
+                <td>
+                    <%= user.loginId %>
+                </td>
+            </tr>
+            <% }); %>
     </table>
+
     <a href="/"><button>Go Back</button></a>
+    <script>
+        <% if (successMessage) { %>
+            alert("<%= successMessage %>");
+        <% } %>
+    </script>
 </body>
 
 </html>

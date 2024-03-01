@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
+  <title>
+    <%= title %>
+  </title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -139,11 +141,11 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required
       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{6,}">
-    <span class="field-info">* Minimum 6 characters, at least one uppercase, one lowercase, one digit, and one special character</span>
+    <span class="field-info">* Minimum 6 characters, at least one uppercase, one lowercase, one digit, and one special
+      character</span>
 
     <div class="form-footer">
       <button type="submit">Save</button>
-      <a href="/list" class="button">Show users</a>
     </div>
   </form>
   <script>
@@ -152,7 +154,12 @@
         document.getElementById('userForm').reset();
       }, 1000);
     });
+
+    <% if (errorMessage) { %>
+      alert("<%= errorMessage %>");
+    <% } %>
   </script>
+
 </body>
 
 </html>
