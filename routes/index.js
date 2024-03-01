@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Your Title', errorMessage: req.session.errorMessage });
+  res.render('index', { title: 'task1', errorMessage: req.session.errorMessage });
 
   // Clear the errorMessage after rendering the view
   req.session.errorMessage = null;
